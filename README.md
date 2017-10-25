@@ -1,8 +1,8 @@
-## mod-learnspells
+## mod-account-achievements
 
-# LearnAllSpells module for AzerothCore.
+# Account Achievements module for AzerothCore.
 
-LearnAllSpells teach new spells on level-up, like in Cataclysm and up.
+Share your characters achievements to all on your account.
 
 # Original script:
-http://www.ac-web.org/forums/showthread.php?172918-C-Automatically-Learn-New-Spells
+http://www.ac-web.org/forums/showthread.php?223586-Account-Bound-Achievements

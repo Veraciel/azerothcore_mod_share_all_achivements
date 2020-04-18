@@ -30,7 +30,7 @@ public:
             {
                 ChatHandler(pPlayer->GetSession()).SendSysMessage("This server is running the |cff4CFF00AccountAchievements |rmodule.");
             }
-			
+
 			std::vector<uint32> Guids;
 			QueryResult result1 = CharacterDatabase.PQuery("SELECT guid, race FROM characters WHERE account = %u", pPlayer->GetSession()->GetAccountId());
 			if (!result1)
@@ -40,7 +40,6 @@ public:
 			{
 				Field* fields = result1->Fetch();
 
-				uint32 guid = fields[0].GetUInt32();
 				uint32 race = fields[1].GetUInt8();
 
 				if ((Player::TeamIdForRace(race) == Player::TeamIdForRace(pPlayer->getRace())) || !limitrace)
@@ -69,7 +68,7 @@ public:
 			}
 		}
 	}
-		
+
 	void AddAchievements(Player* player, uint32 AchievementID)
 	{
 		if (sConfigMgr->GetBoolDefault("Account.Achievements.Enable", true))

@@ -85,29 +85,7 @@ public:
 	}
 };
 
-class AccountAchievementsWorld : public WorldScript
-{
-public:
-	AccountAchievementsWorld() : WorldScript("AccountAchievementsWorld") { }
-
-	void OnBeforeConfigLoad(bool reload) override
-	{
-		if (!reload) {
-			std::string conf_path = _CONF_DIR;
-			std::string cfg_file = conf_path + "/mod_achievements.conf";
-#ifdef WIN32
-			cfg_file = "mod_achievements.conf";
-#endif
-			std::string cfg_def_file = cfg_file + ".dist";
-			sConfigMgr->LoadMore(cfg_def_file.c_str());
-
-			sConfigMgr->LoadMore(cfg_file.c_str());
-		}
-	}
-};
-
 void AddAccountAchievementsScripts()
 {
-	new AccountAchievementsWorld;
 	new AccountAchievements;
 }
